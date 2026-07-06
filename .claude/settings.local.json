@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__1392f918-f2fc-4464-8432-6993d0a5aa7c__get_metadata",
+      "Bash(jq -r .[0].text /Users/lucawalther/.claude/projects/-Users-lucawalther-Schutzchecker-Prototyp/a22c55a5-bbf7-49ca-8cb8-0da80e8b198a/tool-results/mcp-1392f918-f2fc-4464-8432-6993d0a5aa7c-get_metadata-1783083780951.txt)",
+      "mcp__1392f918-f2fc-4464-8432-6993d0a5aa7c__get_screenshot",
+      "Bash(curl -s -o s11.png \"https://www.figma.com/api/mcp/asset/53c39df3-188a-4b79-9ddd-a6a68c478040\")",
+      "Bash(curl -s -o s13.png \"https://www.figma.com/api/mcp/asset/bfd9378c-595b-4d31-bcc5-3a7a93567b6f\")",
+      "Bash(curl -s -o s16.png \"https://www.figma.com/api/mcp/asset/bbe37842-6ff2-4a8b-93cb-6f39318009b2\")",
+      "Bash(curl -s -o s17.png \"https://www.figma.com/api/mcp/asset/497b0102-240d-4d40-8ba0-aecb27eb77cf\")",
+      "Bash(curl -s -o s19.png \"https://www.figma.com/api/mcp/asset/ee239bd8-9619-4ff5-bede-e3be575534ca\")",
+      "mcp__1392f918-f2fc-4464-8432-6993d0a5aa7c__get_design_context",
+      "Bash(npm create *)",
+      "Bash(yes)",
+      "Bash(npm -v)",
+      "Bash(npx create-vite@latest --help)",
+      "Bash(npx create-vite@latest . --template react-ts --overwrite --no-interactive)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm run *)"
+    ]
+  }
+}

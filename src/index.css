@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Ubuntu", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-page: #edf5fe;
+  --color-header-border: #f0f5f7;
+  --color-ink: #1b1d1e;
+  --color-ink-strong: #0f172a;
+  --color-navy: #00244d;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-teal: #397a94;
+  --color-teal-dark: #2c6478;
+  --color-teal-tint: #ebf1f8;
+  --color-blue-tint: rgba(13, 87, 166, 0.08);
+  --color-track: #c6d8f0;
+  --color-track-light: #ebf2f4;
+  --color-error: #d6271e;
+  --color-error-tint: #f7cbc9;
+  --color-success: #4caf7d;
+  --color-notice-bg: #fbe9e0;
+  --color-notice-text: #9a4a32;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #dbe6ef;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-headline {
+  font-family: var(--font-headline);
+}
+
+.phone-scroll::-webkit-scrollbar {
+  width: 0px;
+}
