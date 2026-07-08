@@ -21,18 +21,8 @@ import { Header } from "../components/Header";
 import { ProgressBar } from "../components/ProgressBar";
 import { RiskFooterBar } from "../components/RiskFooterBar";
 import { FloodHouseIcon } from "../components/icons/FloodHouseIcon";
+import { StepHeading } from "../components/StepHeading";
 import { useFlow } from "../state/FlowContext";
-
-function StepHeading({ n, children }: { n: number; children: React.ReactNode }) {
-  return (
-    <div className="flex gap-3 items-center w-full">
-      <div className="size-10 shrink-0 rounded-full border-[3px] border-teal flex items-center justify-center">
-        <span className="font-extrabold text-teal text-[16px]">{n}</span>
-      </div>
-      <h2 className="font-headline font-bold text-[18px] leading-[1.2] text-ink">{children}</h2>
-    </div>
-  );
-}
 
 const coverageRows = [
   {
@@ -211,6 +201,12 @@ export function IntroScreen() {
                 </div>
               ))}
             </div>
+            <button
+              onClick={() => navigate("/kontakt")}
+              className="mt-6 w-full rounded-lg border-2 border-teal text-teal font-semibold text-[15px] py-3 text-center active:scale-[0.98] transition"
+            >
+              Zur Wohngebäudeversicherung beraten lassen
+            </button>
           </div>
         </div>
 

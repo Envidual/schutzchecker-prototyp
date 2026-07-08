@@ -10,6 +10,7 @@ import { FragenScreen } from "./screens/FragenScreen";
 import { KontaktScreen } from "./screens/KontaktScreen";
 import { TarifScreen } from "./screens/TarifScreen";
 import { AntragScreen } from "./screens/AntragScreen";
+import { AbschlussScreen } from "./screens/AbschlussScreen";
 import { DankeScreen } from "./screens/DankeScreen";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/kontakt" element={<KontaktScreen />} />
             <Route path="/tarif" element={<TarifScreen />} />
             <Route path="/antrag" element={<AntragScreen />} />
+            <Route path="/abschluss" element={<AbschlussScreen />} />
             <Route path="/danke" element={<DankeScreen />} />
           </Routes>
         </PhoneFrame>

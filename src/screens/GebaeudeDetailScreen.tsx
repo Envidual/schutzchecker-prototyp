@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowLeft, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useFlow, type JaNein } from "../state/FlowContext";
 import { JaNeinToggle } from "../components/JaNeinToggle";
 import { MissingFieldsOverlay } from "../components/MissingFieldsOverlay";
@@ -33,12 +33,21 @@ export function GebaeudeDetailScreen() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [attempted, setAttempted] = useState(false);
 
+  useEffect(() => {
+    setAngabenKorrekt(building?.angabenKorrekt);
+    setBauart(building?.bauart ?? "");
+    setDach(building?.dacheindeckung ?? "");
+    setAttempted(false);
+  }, [id]);
+
   if (!building) return null;
 
   const canSave = !!angabenKorrekt && !!bauart && !!dach;
   const angabenError = attempted && !angabenKorrekt;
   const bauartError = attempted && !bauart;
   const dachError = attempted && !dach;
+
+  const nextBuilding = buildings[buildings.findIndex((b) => b.id === building.id) + 1];
 
   const handleSave = () => {
     if (!canSave) {
@@ -47,7 +56,7 @@ export function GebaeudeDetailScreen() {
       return;
     }
     setBuilding(building.id, { done: true, angabenKorrekt, bauart, dacheindeckung: dach });
-    navigate("/gebaeude");
+    navigate(nextBuilding ? `/gebaeude/${nextBuilding.id}` : "/gebaeude");
   };
 
   return (
@@ -57,7 +66,7 @@ export function GebaeudeDetailScreen() {
           onClick={() => navigate("/gebaeude")}
           className="flex items-center gap-1 text-muted text-[14px] w-fit"
         >
-          <ArrowLeft size={16} /> Zurück
+          <ArrowLeft size={16} /> Zur Übersicht
         </button>
         <div>
           <h1 className="font-headline font-bold text-[26px] text-ink">{building.name}</h1>
@@ -155,9 +164,10 @@ export function GebaeudeDetailScreen() {
       <div className="sticky bottom-0 z-20 bg-white border-t border-border px-4 py-4 flex justify-end">
         <button
           onClick={handleSave}
-          className="rounded-lg bg-teal text-white font-semibold text-[15px] px-8 py-3 active:scale-[0.98] transition"
+          className="rounded-lg bg-teal text-white font-semibold text-[15px] px-8 py-3 active:scale-[0.98] transition flex items-center gap-2"
         >
-          Speichern
+          {nextBuilding ? `Weiter zu ${nextBuilding.name}` : "Weiter zur Gebäudeübersicht"}
+          <ArrowRight size={18} />
         </button>
       </div>
 

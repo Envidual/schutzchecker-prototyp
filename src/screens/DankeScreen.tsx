@@ -1,8 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { CheckCircle2 } from "lucide-react";
 import { Header } from "../components/Header";
 import { ProgressBar } from "../components/ProgressBar";
-import { FooterNav } from "../components/FooterNav";
 import { useFlow, type JaNein } from "../state/FlowContext";
 import { QUESTIONS } from "./FragenScreen";
 import { TARIFE, formatPrice } from "./TarifScreen";
@@ -37,7 +35,6 @@ function SummaryRow({ label, value }: { label: string; value: string }) {
 }
 
 export function DankeScreen() {
-  const navigate = useNavigate();
   const { buildings, fragen, tarif, antrag, progress } = useFlow();
   const selectedTarif = TARIFE.find((t) => t.id === tarif);
 
@@ -91,8 +88,6 @@ export function DankeScreen() {
           </SummaryCard>
         </div>
       </div>
-
-      <FooterNav showBack={false} nextLabel="Zurück zur Startseite" onNext={() => navigate("/")} />
     </div>
   );
 }
